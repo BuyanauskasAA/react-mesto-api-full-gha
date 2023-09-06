@@ -70,9 +70,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-66',
+  baseUrl: 'http://api.mesto.buyanauskas.nomoredomainsicu.ru',
   headers: {
-    authorization: '0cc5c16f-cf48-47c9-ae08-45d646caabcf',
     'Content-Type': 'application/json',
   },
 });
