@@ -1,0 +1,10 @@
+.form__submit-button_color_white {
+  margin-top: 215px;
+  background-color: #fff;
+  color: #000;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.form__submit-button_color_white:hover {
+  opacity: 0.85;
+}

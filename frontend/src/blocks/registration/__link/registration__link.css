@@ -1,0 +1,14 @@
+.registration__link {
+  margin-top: 16px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #fff;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.registration__link:hover {
+  opacity: 0.6;
+}

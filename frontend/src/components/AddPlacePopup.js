@@ -28,10 +28,10 @@ function AddPlacePopup({ isOpened, onClose, onAddPlace, isLoading }) {
       textButton={textButton}
     >
       <>
-        <label className="popup__field">
+        <label className="form__field">
           <input
             id="input-card-name"
-            className="popup__input"
+            className="form__input form__input_color_black"
             type="text"
             name="name"
             placeholder="Название"
@@ -40,19 +40,19 @@ function AddPlacePopup({ isOpened, onClose, onAddPlace, isLoading }) {
             required
             ref={name}
           />
-          <span className="popup__error input-card-name-error"></span>
+          <span className="form__error input-card-name-error"></span>
         </label>
-        <label className="popup__field">
+        <label className="form__field">
           <input
             id="input-card-link"
-            className="popup__input"
+            className="form__input form__input_color_black"
             type="url"
             name="link"
             placeholder="Ссылка на картинку"
             required
             ref={link}
           />
-          <span className="popup__error input-card-link-error"></span>
+          <span className="form__error input-card-link-error"></span>
         </label>
       </>
     </PopupWithForm>

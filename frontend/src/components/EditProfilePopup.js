@@ -42,10 +42,10 @@ function EditProfilePopup({ isOpened, onClose, onUpdateUser, isLoading }) {
       textButton={textButton}
     >
       <>
-        <label className="popup__field">
+        <label className="form__field">
           <input
             id="input-profile-name"
-            className="popup__input"
+            className="form__input form__input_color_black"
             type="text"
             name="name"
             placeholder="Имя"
@@ -55,12 +55,12 @@ function EditProfilePopup({ isOpened, onClose, onUpdateUser, isLoading }) {
             value={name}
             onChange={handleNameChange}
           />
-          <span className="popup__error input-profile-name-error"></span>
+          <span className="form__error input-profile-name-error"></span>
         </label>
-        <label className="popup__field">
+        <label className="form__field">
           <input
             id="input-profile-about"
-            className="popup__input"
+            className="form__input form__input_color_black"
             type="text"
             name="about"
             placeholder="О себе"
@@ -70,7 +70,7 @@ function EditProfilePopup({ isOpened, onClose, onUpdateUser, isLoading }) {
             value={description}
             onChange={handleDescriptionChange}
           />
-          <span className="popup__error input-profile-about-error"></span>
+          <span className="form__error input-profile-about-error"></span>
         </label>
       </>
     </PopupWithForm>

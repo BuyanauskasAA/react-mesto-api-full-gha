@@ -30,9 +30,12 @@ function PopupWithForm({ name, title, children, isOpened, onClose, onSubmit, tex
           aria-label="Закрыть"
         ></button>
         <h2 className="popup__title">{title}</h2>
-        <form ref={form} onSubmit={onSubmit} className="popup__form" name={name} noValidate>
+        <form ref={form} onSubmit={onSubmit} className="form" name={name} noValidate>
           {children}
-          <button className="button popup__submit-button" type="submit">
+          <button
+            className="button form__submit-button form__submit-button_color_black"
+            type="submit"
+          >
             {textButton}
           </button>
         </form>

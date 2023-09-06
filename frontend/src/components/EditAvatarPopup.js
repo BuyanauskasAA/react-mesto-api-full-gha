@@ -27,17 +27,17 @@ function EditAvatarPopup({ isOpened, onClose, onUpdateAvatar, isLoading }) {
       onSubmit={handleSubmit}
       textButton={textButton}
     >
-      <label className="popup__field">
+      <label className="form__field">
         <input
           id="input-avatar-link"
-          className="popup__input"
+          className="form__input form__input_color_black"
           type="url"
           name="avatar"
           placeholder="Ссылка на картинку"
           required
           ref={avatar}
         />
-        <span className="popup__error input-avatar-link-error"></span>
+        <span className="form__error input-avatar-link-error"></span>
       </label>
     </PopupWithForm>
   );

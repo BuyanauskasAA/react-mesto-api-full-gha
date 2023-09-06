@@ -1,0 +1,5 @@
+.form__input_color_white {
+  color: #fff;
+  background-color: black;
+  border-bottom: 2px solid #ccc;
+}
