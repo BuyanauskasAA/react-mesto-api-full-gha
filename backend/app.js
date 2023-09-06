@@ -9,6 +9,7 @@ const routes = require('./routes');
 const errorHandler = require('./middlewares/error-handler');
 const rateLimiter = require('./utils/rate-limiter');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const corsHandler = require('./middlewares/cors-handler');
 
 const { PORT = 3000, DB_URL = 'mongodb://localhost:27017/mestodb' } = process.env;
 
@@ -27,6 +28,7 @@ app.use(rateLimiter);
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(requestLogger);
+app.use(corsHandler);
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());
