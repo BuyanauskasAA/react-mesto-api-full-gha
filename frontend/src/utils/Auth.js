@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://api.mesto.buyanauskas.nomoredomainsicu.ru';
+export const BASE_URL = 'https://api.mesto.buyanauskas.nomoredomainsicu.ru';
 
 const checkResponse = (response) => {
   if (response.ok) {

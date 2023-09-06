@@ -70,7 +70,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://api.mesto.buyanauskas.nomoredomainsicu.ru',
+  baseUrl: 'https://api.mesto.buyanauskas.nomoredomainsicu.ru',
   headers: {
     'Content-Type': 'application/json',
   },
