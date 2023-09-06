@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Создайте свой профиль и добавляйте информацию о местах в которых вы уже побывали или планируете побывать.",
   "author": "Anton Buyanauskas",
-  "homepage": "/react-mesto-auth",
   "license": "ISC",
   "private": true,
   "devDependencies": {
