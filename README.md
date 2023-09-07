@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.67.144
+IP 51.250.67.144
 
 Frontend https://mesto.buyanauskas.nomoredomainsicu.ru/
 
