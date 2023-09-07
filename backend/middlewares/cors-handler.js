@@ -1,7 +1,7 @@
 const allowedCors = [
   'https://mesto.buyanauskas.nomoredomainsicu.ru',
   'http://mesto.buyanauskas.nomoredomainsicu.ru',
-  'localhost:3000',
+  'http://localhost:3000',
 ];
 
 module.exports = (req, res, next) => {
@@ -9,6 +9,7 @@ module.exports = (req, res, next) => {
 
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Credentials', 'true');
   }
 
   const { method } = req;
@@ -19,8 +20,9 @@ module.exports = (req, res, next) => {
     res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
     res.header('Access-Control-Allow-Headers', requestHeaders);
 
-    return res.end();
+    res.end();
+    return;
   }
 
-  return next();
+  next();
 };
