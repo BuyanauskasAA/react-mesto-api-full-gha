@@ -3,6 +3,12 @@ const { Joi, celebrate } = require('celebrate');
 const { signup, signin, signout } = require('../controllers/auth');
 const urlRegex = require('../utils/url-regex');
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 router.post(
   '/signup',
   celebrate({
