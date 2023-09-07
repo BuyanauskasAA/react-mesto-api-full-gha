@@ -37,14 +37,14 @@ function App() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      auth.checkToken(token).then((response) => {
-        setUserEmail(response.data.email);
+    api
+      .getUserInfo()
+      .then((response) => {
+        setUserEmail(response.email);
         setLoggedIn(true);
         navigate('/', { replace: true });
-      });
-    }
+      })
+      .catch(console.error);
   }, []);
 
   React.useEffect(() => {
@@ -52,7 +52,7 @@ function App() {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
         .then(([user, cards]) => {
           setCurrentUser(user);
-          setCards(cards);
+          setCards(cards.reverse());
         })
         .catch(console.error);
     }
@@ -127,8 +127,7 @@ function App() {
   function handleAuthorize(password, email) {
     auth
       .authorize(password, email)
-      .then(({ token }) => {
-        localStorage.setItem('token', token);
+      .then(() => {
         setUserEmail(email);
         setLoggedIn(true);
         navigate('/', { replace: true });
@@ -214,9 +213,13 @@ function App() {
   }
 
   function handleSignOut() {
-    setUserEmail('');
-    localStorage.removeItem('token');
-    navigate('/sign-in', { replace: true });
+    auth
+      .logout()
+      .then(() => {
+        setUserEmail('');
+        navigate('/sign-in', { replace: true });
+      })
+      .catch(console.error);
   }
 
   return (

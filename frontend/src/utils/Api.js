@@ -18,6 +18,7 @@ class Api {
   getInitialCards() {
     return this._request('cards', {
       method: 'GET',
+      credentials: 'include',
       headers: this._headers,
     });
   }
@@ -26,6 +27,7 @@ class Api {
     const method = isLiked ? 'PUT' : 'DELETE';
     return this._request(`cards/${cardId}/likes`, {
       method: method,
+      credentials: 'include',
       headers: this._headers,
     });
   }
@@ -33,6 +35,7 @@ class Api {
   addCard(body) {
     return this._request('cards', {
       method: 'POST',
+      credentials: 'include',
       headers: this._headers,
       body: JSON.stringify(body),
     });
@@ -41,6 +44,7 @@ class Api {
   deleteCard(cardId) {
     return this._request(`cards/${cardId}`, {
       method: 'DELETE',
+      credentials: 'include',
       headers: this._headers,
     });
   }
@@ -48,6 +52,7 @@ class Api {
   getUserInfo() {
     return this._request('users/me', {
       method: 'GET',
+      credentials: 'include',
       headers: this._headers,
     });
   }
@@ -55,6 +60,7 @@ class Api {
   setUserInfo(body) {
     return this._request('users/me', {
       method: 'PATCH',
+      credentials: 'include',
       headers: this._headers,
       body: JSON.stringify(body),
     });
@@ -63,6 +69,7 @@ class Api {
   setUserAvatar(body) {
     return this._request('users/me/avatar', {
       method: 'PATCH',
+      credentials: 'include',
       headers: this._headers,
       body: JSON.stringify(body),
     });
@@ -70,7 +77,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://api.mesto.buyanauskas.nomoredomainsicu.ru',
+  baseUrl: 'http://localhost:3001',
   headers: {
     'Content-Type': 'application/json',
   },
